@@ -51,7 +51,8 @@ function renderLearner(){
   if(!has){ $("#setup").hidden=true; $("#session").hidden=true; S=null }
   else if($("#session").hidden) $("#setup").hidden=false;
   $("#switchbtn").hidden=!has;
-  $("#authtext").innerHTML = has ? `Hallo <b>${esc(learner.name)}</b>${fb?"":" · Fortschritt nur auf diesem Gerät"}` : (fb ? "Tippe auf deinen Namen oder gib ihn einmal ein." : "Gib einmal deinen Namen ein.");
+  $("#authtext").textContent = has ? learner.name : "Wer übt?";
+  if(has) $("#switchbtn").textContent = (learner.name.trim()[0]||"?").toUpperCase();
   $("#known").innerHTML = known.map(k=>`<button class="chip known" data-id="${esc(k.id)}">${esc(k.name)}</button>`).join("");
   $("#known").hidden = !known.length;
   $("#pickhint").textContent = known.length ? "Neu hier? Dann gib unten einmal deinen Namen ein." : "Das fragt die Seite nur einmal pro Gerät.";
@@ -131,12 +132,14 @@ function SETS(){
   const s=[{k:"all",t:"Alles"},{k:"weak",t:"Hakt noch"}];
   if(ITEMS.some(i=>i.prio===1)) s.push({k:"p1",t:"Priorität 1"});
   if(ITEMS.some(i=>i.prio===2)) s.push({k:"p2",t:"Priorität 2"});
+  if(ITEMS.some(i=>i.prio===3)) s.push({k:"p3",t:"Top 5 Klausur"});
   return s.concat(CATS.map(c=>({k:"c:"+c,t:c})));
 }
 function poolFor(k){
   if(k==="all") return ITEMS;
   if(k==="p1") return ITEMS.filter(i=>i.prio===1);
   if(k==="p2") return ITEMS.filter(i=>i.prio===2);
+  if(k==="p3") return ITEMS.filter(i=>i.prio===3);
   if(k==="weak") return ITEMS.filter(i=>progress[i.id] && (progress[i.id].box<=1 || progress[i.id].wrong>progress[i.id].right));
   return ITEMS.filter(i=>i.cat===k.slice(2));
 }
