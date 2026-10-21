@@ -74,6 +74,9 @@ button:focus-visible,.chip:focus-visible{outline:3px solid var(--blue);outline-o
 .danger{border:1px solid var(--red);color:var(--red);background:transparent;border-radius:999px;padding:6px 12px;font-size:.85rem;cursor:pointer}
 .authbar{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--sheet);border:1px solid var(--rule);border-radius:var(--r);padding:10px 12px;font-size:.88rem;color:var(--ink-soft)}
 .authbar b{color:var(--ink)}
+#newname{flex:1 1 180px;min-width:0;border:1px solid var(--rule);background:var(--paper);color:var(--ink);border-radius:12px;padding:12px;font:400 1rem var(--body)}
+#newname:focus-visible{outline:3px solid var(--blue);outline-offset:1px}
+.known{font-weight:700}
 .gap{font-style:italic;color:var(--ink);background:var(--blue-soft);border-radius:10px;padding:8px 12px;overflow-wrap:anywhere}
 .answer .ex{font-style:italic;color:var(--ink-soft)}
 .speak{align-self:flex-start;border:1px solid var(--rule);background:transparent;color:var(--ink-soft);border-radius:999px;padding:4px 12px;font-size:.85rem;cursor:pointer}
@@ -139,11 +142,19 @@ h2{font-family:var(--display);font-weight:400;font-size:1.25rem;margin:0}
 
   <div class="authbar" id="authbar">
     <span id="authtext">Verbinde …</span>
-    <button class="chip" id="loginbtn" hidden>Mit Google anmelden</button>
-    <button class="speak" id="logoutbtn" hidden>Abmelden</button>
+    <button class="speak" id="switchbtn" hidden>Wechseln</button>
   </div>
 
   <main id="view-learn">
+    <div id="picker" hidden class="card" style="min-height:0">
+      <div class="cat">Wer übt?</div>
+      <div class="chips" id="known"></div>
+      <form id="newform" class="listrow">
+        <input id="newname" maxlength="30" placeholder="Dein Vorname" autocomplete="given-name" aria-label="Dein Vorname">
+        <button class="next" type="submit">Los geht's</button>
+      </form>
+      <p class="nuance" style="margin:0" id="pickhint">Das fragt die Seite nur einmal pro Gerät.</p>
+    </div>
     <div id="setup" class="wrap" style="gap:18px">
       <div style="display:flex;flex-direction:column;gap:10px">
         <p class="label" style="margin:0">Liste</p>

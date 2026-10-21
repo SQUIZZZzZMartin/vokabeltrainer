@@ -7,7 +7,7 @@ let curSet="all", curMode="cards";
 let curList = (()=>{try{return localStorage.getItem("vocab-list")||""}catch(e){return ""}})();
 let ITEMS=[], BYID={}, CATS=[];
 function applyList(id,remember){
-  if(!LISTS[id]) id=Object.keys(LISTS)[0];
+  if(!LISTS[id]) id=Object.keys(LISTS).pop();   // default: the newest list
   curList=id; if(remember){try{localStorage.setItem("vocab-list",id)}catch(e){}}
   ITEMS=LISTS[id].items; BYID=Object.fromEntries(ITEMS.map(i=>[i.id,i])); CATS=[...new Set(ITEMS.map(i=>i.cat))];
   if(!SETS().some(s=>s.k===curSet)) curSet="all";
@@ -18,69 +18,95 @@ const $ = s=>document.querySelector(s);
 const esc = s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const shuffle = a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
 
-/* ---------- storage: Firestore when signed in, this device as cache/fallback ---------- */
+/* ---------- learner + storage: Firestore (anonymous, no login) with a local cache ---------- */
 let progress = {};          // itemId -> {box,right,wrong,last}
 let sessions = [];          // newest first
-const LS = "vocab-trainer-v1";
-function lsLoad(){try{const d=JSON.parse(localStorage.getItem(LS)||"{}");progress=d.p||{};sessions=d.s||[]}catch(e){}}
-function lsSave(){try{localStorage.setItem(LS,JSON.stringify({p:progress,s:sessions.slice(0,30)}))}catch(e){}}
-let fb = null;              // set while a permitted account is signed in
+let learner = (()=>{try{return JSON.parse(localStorage.getItem("vocab-learner")||"null")}catch(e){return null}})();
+const slugify = n => n.toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g,"").replace(/ß/g,"ss").replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,30);
+const lsKey = () => "vocab-trainer-v1-" + (learner ? learner.id : "_");
+function lsLoad(){progress={};sessions=[];try{const d=JSON.parse(localStorage.getItem(lsKey())||"{}");progress=d.p||{};sessions=d.s||[]}catch(e){}}
+function lsSave(){try{localStorage.setItem(lsKey(),JSON.stringify({p:progress,s:sessions.slice(0,30)}))}catch(e){}}
+let fb = null;              // {db, fs} once Firebase is connected
+let known = [];             // learners already in Firestore
 const pending = {};         // one write at a time per document
 function saveItem(id){
   lsSave();
-  if(!fb) return;
-  const p={...progress[id]}, f=fb;
-  pending[id]=(pending[id]||Promise.resolve()).then(()=>f.setDoc(f.doc(f.db,"learners",LEARNER_ID,"progress",id),p)).catch(e=>{console.warn(e); if(e&&e.code==="permission-denied") denied()});
+  if(!fb || !learner) return;
+  const p={...progress[id]}, f=fb, who=learner.id;
+  pending[id]=(pending[id]||Promise.resolve()).then(()=>f.fs.setDoc(f.fs.doc(f.db,"learners",who,"progress",id),p)).catch(e=>{console.warn(e); showSave("error")});
 }
 function saveSession(s){
   sessions.unshift(s); lsSave(); renderStats();
-  if(fb) fb.addDoc(fb.collection(fb.db,"learners",LEARNER_ID,"sessions"),s).catch(e=>console.warn(e));
+  if(!fb || !learner) return;
+  fb.fs.addDoc(fb.fs.collection(fb.db,"learners",learner.id,"sessions"),s).catch(e=>console.warn(e));
+  fb.fs.setDoc(fb.fs.doc(fb.db,"learners",learner.id),{name:learner.name,lastSeen:s.at},{merge:true}).catch(()=>{});
 }
 function showSave(state){
-  const t={cloud:"Fortschritt wird in Firebase gespeichert",local:"Fortschritt nur auf diesem Gerät",denied:"Kein Zugriff – Fortschritt nur auf diesem Gerät"}[state||(fb?"cloud":"local")];
-  $("#saveinfo").textContent=t;
+  state = state || (fb ? "cloud" : "local");
+  $("#saveinfo").textContent = {cloud:"Fortschritt wird gespeichert",local:"Fortschritt nur auf diesem Gerät",error:"Speichern klappt gerade nicht – Fortschritt bleibt auf diesem Gerät"}[state];
+}
+function renderLearner(){
+  const has=!!learner;
+  $("#picker").hidden=has;
+  if(!has){ $("#setup").hidden=true; $("#session").hidden=true; S=null }
+  else if($("#session").hidden) $("#setup").hidden=false;
+  $("#switchbtn").hidden=!has;
+  $("#authtext").innerHTML = has ? `Hallo <b>${esc(learner.name)}</b>${fb?"":" · Fortschritt nur auf diesem Gerät"}` : (fb ? "Tippe auf deinen Namen oder gib ihn einmal ein." : "Gib einmal deinen Namen ein.");
+  $("#known").innerHTML = known.map(k=>`<button class="chip known" data-id="${esc(k.id)}">${esc(k.name)}</button>`).join("");
+  $("#known").hidden = !known.length;
+  $("#pickhint").textContent = known.length ? "Neu hier? Dann gib unten einmal deinen Namen ein." : "Das fragt die Seite nur einmal pro Gerät.";
+}
+function chooseLearner(l){
+  learner=l; try{localStorage.setItem("vocab-learner",JSON.stringify(l))}catch(e){}
+  lsLoad(); renderLearner(); renderSetInfo(); renderStats();
+  if(fb){ fb.fs.setDoc(fb.fs.doc(fb.db,"learners",l.id),{name:l.name},{merge:true}).catch(e=>console.warn(e)); watchLearner() }
+}
+$("#known").addEventListener("click",e=>{const b=e.target.closest("[data-id]"); if(!b) return; const k=known.find(x=>x.id===b.dataset.id); if(k) chooseLearner({id:k.id,name:k.name})});
+$("#newform").addEventListener("submit",e=>{
+  e.preventDefault();
+  const name=$("#newname").value.trim().replace(/\s+/g," ").slice(0,30); const id=slugify(name);
+  if(!id){ $("#newname").focus(); return }
+  const k=known.find(x=>x.id===id);
+  chooseLearner({id, name:k?k.name:name}); $("#newname").value="";
+});
+$("#switchbtn").addEventListener("click",()=>{ learner=null; try{localStorage.removeItem("vocab-learner")}catch(e){} unwatch(); lsLoad(); renderLearner(); renderStats(); });
+
+let unsub=[];
+function unwatch(){ unsub.forEach(u=>u()); unsub=[] }
+function watchLearner(){
+  unwatch(); if(!fb||!learner) return;
+  const {db,fs}=fb, who=learner.id; let first=true;
+  unsub.push(fs.onSnapshot(fs.collection(db,"learners",who,"progress"),snap=>{
+    if(!learner||learner.id!==who) return;
+    const remote={}; snap.forEach(d=>{remote[d.id]=d.data()});
+    const upload=[];
+    for(const k in progress){ if(!remote[k] || (progress[k].last||0)>(remote[k].last||0)){ remote[k]=progress[k]; if(first) upload.push(k) } }
+    progress=remote; lsSave(); renderSetInfo(); renderStats();
+    if(first){ first=false; upload.forEach(saveItem) }   // carry over what was practised offline
+  },e=>{console.warn(e); showSave("error")}));
+  unsub.push(fs.onSnapshot(fs.query(fs.collection(db,"learners",who,"sessions"),fs.orderBy("at","desc"),fs.limit(30)),snap=>{
+    if(!learner||learner.id!==who) return;
+    sessions=snap.docs.map(d=>d.data()); lsSave(); renderStats();
+  },e=>console.warn(e)));
 }
 lsLoad();
 
-let unsub=[];
-function denied(){
-  unsub.forEach(u=>u()); unsub=[]; fb=null;
-  $("#authtext").innerHTML="Dieses Google-Konto hat <b>keinen Zugriff</b>. Fortschritt bleibt auf diesem Gerät.";
-  showSave("denied");
-}
 async function initFirebase(){
-  if(!firebaseConfig){ $("#authtext").textContent="Firebase ist noch nicht eingerichtet. Fortschritt bleibt auf diesem Gerät."; showSave("local"); return }
+  renderLearner(); showSave();
+  if(!firebaseConfig) return;
   const V="https://www.gstatic.com/firebasejs/10.12.2/";
-  let app,auth,fs;
-  try{ [app,auth,fs]=await Promise.all([import(V+"firebase-app.js"),import(V+"firebase-auth.js"),import(V+"firebase-firestore.js")]) }
-  catch(e){ $("#authtext").textContent="Firebase lässt sich gerade nicht laden. Fortschritt bleibt auf diesem Gerät."; showSave("local"); return }
-  const fapp=app.initializeApp(firebaseConfig);
-  const a=auth.getAuth(fapp), db=fs.getFirestore(fapp);
-  const provider=new auth.GoogleAuthProvider();
-  $("#loginbtn").onclick=async()=>{
-    try{ await auth.signInWithPopup(a,provider) }
-    catch(e){ if(e&&(e.code==="auth/popup-blocked"||e.code==="auth/operation-not-supported-in-this-environment")) auth.signInWithRedirect(a,provider); else console.warn(e) }
-  };
-  $("#logoutbtn").onclick=()=>auth.signOut(a);
-  auth.onAuthStateChanged(a,user=>{
-    unsub.forEach(u=>u()); unsub=[]; fb=null;
-    $("#loginbtn").hidden=!!user; $("#logoutbtn").hidden=!user;
-    if(!user){ $("#authtext").innerHTML="Nicht angemeldet. Fortschritt bleibt auf diesem Gerät."; showSave("local"); return }
-    fb={db,doc:fs.doc,setDoc:fs.setDoc,addDoc:fs.addDoc,collection:fs.collection};
-    $("#authtext").innerHTML=`Angemeldet als <b>${esc(user.displayName||user.email||"")}</b>`;
-    showSave("cloud");
-    let first=true;
-    unsub.push(fs.onSnapshot(fs.collection(db,"learners",LEARNER_ID,"progress"),snap=>{
-      const remote={}; snap.forEach(d=>{remote[d.id]=d.data()});
-      const upload=[];
-      for(const k in progress){ if(!remote[k] || (progress[k].last||0)>(remote[k].last||0)){ remote[k]=progress[k]; if(first) upload.push(k) } }
-      progress=remote; lsSave(); renderSetInfo(); renderStats();
-      if(first){ first=false; upload.forEach(saveItem) }  // carry over what was learned offline
-    },e=>{ if(e&&e.code==="permission-denied") denied() }));
-    unsub.push(fs.onSnapshot(fs.query(fs.collection(db,"learners",LEARNER_ID,"sessions"),fs.orderBy("at","desc"),fs.limit(30)),snap=>{
-      sessions=snap.docs.map(d=>d.data()); lsSave(); renderStats();
-    },e=>{ if(e&&e.code==="permission-denied") denied() }));
-  });
+  try{
+    const [app,auth,fs]=await Promise.all([import(V+"firebase-app.js"),import(V+"firebase-auth.js"),import(V+"firebase-firestore.js")]);
+    const fapp=app.initializeApp(firebaseConfig);
+    await auth.signInAnonymously(auth.getAuth(fapp));     // invisible, no login for Moritz
+    fb={db:fs.getFirestore(fapp),fs};
+  }catch(e){ console.warn("Firebase",e); fb=null; showSave("local"); renderLearner(); return }
+  showSave("cloud"); renderLearner();
+  fb.fs.onSnapshot(fb.fs.collection(fb.db,"learners"),snap=>{
+    known=snap.docs.map(d=>({id:d.id,name:String((d.data()||{}).name||d.id)})).sort((a,b)=>a.name.localeCompare(b.name,"de"));
+    renderLearner();
+  },e=>console.warn(e));
+  if(learner) chooseLearner(learner);
 }
 
 
@@ -128,7 +154,7 @@ $("#modes").addEventListener("click",e=>{const b=e.target.closest(".mode");if(!b
 /* ---------- list chooser ---------- */
 function renderListSel(){
   const arr=Object.values(LISTS);
-  $("#listsel").innerHTML=arr.map(l=>`<option value="${esc(l.id)}"${l.id===curList?" selected":""}>${esc(l.name)} (${l.items.length})</option>`).join("");
+  $("#listsel").innerHTML=arr.map(l=>`<option value="${esc(l.id)}"${l.id===curList?" selected":""}>${esc(l.name)} (${l.items.length})${l===arr[arr.length-1]&&arr.length>1?" – neu":""}</option>`).join("");
   $("#listsel").disabled=arr.length<2;
 }
 function switchList(id){ applyList(id,true); renderListSel(); renderSets(); renderSetInfo(); renderStats(); }
@@ -278,7 +304,7 @@ function renderStats(){
   const weak=ITEMS.filter(i=>progress[i.id]&&progress[i.id].wrong>0).sort((a,b)=>{const pa=progress[a.id],pb=progress[b.id];return (pb.wrong-pb.right/2)-(pa.wrong-pa.right/2)||pa.box-pb.box}).slice(0,10);
   const catRows=CATS.map(c=>{const its=ITEMS.filter(i=>i.cat===c);const s=its.filter(i=>box(i.id)>=4).length;const w=its.filter(i=>{const b=box(i.id);return b>=1&&b<4}).length;return {c,n:its.length,s,w}});
   v.innerHTML=`
-  <p class="sub" style="margin:0">Liste: <b>${esc(LISTS[curList].name)}</b> · <span class="mono">${ITEMS.length}</span> Einträge</p>
+  <p class="sub" style="margin:0">${learner?`<b>${esc(learner.name)}</b> · `:""}Liste: <b>${esc(LISTS[curList].name)}</b> · <span class="mono">${ITEMS.length}</span> Einträge</p>
   <section>
     <div class="stats">
       <div class="stat"><b class="mono" style="font-family:var(--display)">${sit}</b><span>sitzen (Fach 4–5)</span></div>
@@ -292,7 +318,7 @@ function renderStats(){
   <section>
     <h2>Hier hakt es noch</h2>
     ${weak.length?`<div class="list">${weak.map(w=>{const p=progress[w.id];return `<div class="li"><div class="w"><b>${esc(w.en)}</b><span>${esc(w.basic?`statt ${w.basic}`:hintOf(w))}</span></div><span class="pill ${p.box>=3?"g":""}">${p.wrong}× falsch</span></div>`}).join("")}</div>`
-      :`<p class="empty">Noch keine Fehler gespeichert. Sobald Moritz übt, stehen hier die Wörter, die öfter danebengehen.</p>`}
+      :`<p class="empty">Noch keine Fehler gespeichert. Sobald geübt wird, stehen hier die Wörter, die öfter danebengehen.</p>`}
   </section>
   <section>
     <h2>Nach Bereichen</h2>
