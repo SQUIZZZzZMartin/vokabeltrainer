@@ -1,0 +1,940 @@
+[
+ {
+  "cat": "Analyseverben",
+  "basic": "shows",
+  "en": "illustrates / demonstrates",
+  "note": "≈ Illustrates macht etwas anschaulich; demonstrates deutet auf einen stärkeren Beleg.",
+  "ex": "The contrast illustrates his inner conflict.",
+  "id": "v2-analy-shows-illustrates-demonstrates",
+  "prio": 1,
+  "gap": "The contrast _____ his inner conflict."
+ },
+ {
+  "cat": "Analyseverben",
+  "basic": "shows clearly",
+  "en": "highlights / underscores",
+  "note": "≈ Highlights hebt hervor; underscores betont Nachdruck.",
+  "ex": "The imagery underscores her growing anxiety.",
+  "id": "v2-analy-shows-clearly-highlights-underscores",
+  "prio": 1,
+  "gap": "The imagery _____ her growing anxiety."
+ },
+ {
+  "cat": "Analyseverben",
+  "basic": "says / states",
+  "en": "asserts / maintains",
+  "note": "≠ Asserts = behauptet bestimmt; maintains = vertritt eine Position weiterhin.",
+  "ex": "He maintains that loyalty is essential.",
+  "id": "v2-analy-says-states-asserts-maintains",
+  "prio": 1,
+  "gap": "He _____ that loyalty is essential."
+ },
+ {
+  "cat": "Analyseverben",
+  "basic": "says indirectly",
+  "en": "implies / suggests",
+  "note": "≠ Implies = vermittelt indirekt; suggests = legt nahe.",
+  "ex": "Her hesitation implies uncertainty.",
+  "id": "v2-analy-says-indirectly-implies-suggests",
+  "prio": 1,
+  "gap": "Her hesitation _____ uncertainty."
+ },
+ {
+  "cat": "Analyseverben",
+  "basic": "explains",
+  "en": "elucidates / clarifies",
+  "note": "≈ Elucidates ist gehoben und passt zu komplexen Zusammenhängen.",
+  "ex": "The monologue elucidates his motives.",
+  "id": "v2-analy-explains-elucidates-clarifies",
+  "prio": 1,
+  "gap": "The monologue _____ his motives."
+ },
+ {
+  "cat": "Analyseverben",
+  "basic": "describes",
+  "en": "depicts / portrays",
+  "note": "≈ Depicts = stellt dar; portrays = charakterisiert oder zeichnet ein Bild.",
+  "ex": "The narrator portrays her as isolated.",
+  "id": "v2-analy-describes-depicts-portrays",
+  "prio": 1,
+  "gap": "The narrator _____ her as isolated."
+ },
+ {
+  "cat": "Analyseverben",
+  "basic": "makes clear",
+  "en": "reveals / brings to light",
+  "note": "≠ Reveals = enthüllt bisher Verborgenes.",
+  "ex": "His reaction reveals his insecurity.",
+  "id": "v2-analy-makes-clear-reveals-brings-to-light",
+  "prio": 1,
+  "gap": "His reaction _____ his insecurity."
+ },
+ {
+  "cat": "Analyseverben",
+  "basic": "looks at",
+  "en": "examines / scrutinises",
+  "note": "≠ Scrutinises = untersucht besonders kritisch und genau.",
+  "ex": "The play scrutinises traditional masculinity.",
+  "id": "v2-analy-looks-at-examines-scrutinises",
+  "prio": 1,
+  "gap": "The play _____ traditional masculinity."
+ },
+ {
+  "cat": "Analyseverben",
+  "basic": "talks about",
+  "en": "addresses / explores",
+  "note": "≠ Addresses = behandelt ein Thema; explores = untersucht es vertieft.",
+  "ex": "The story explores social expectations.",
+  "id": "v2-analy-talks-about-addresses-explores",
+  "prio": 1,
+  "gap": "The story _____ social expectations."
+ },
+ {
+  "cat": "Analyseverben",
+  "basic": "uses",
+  "en": "employs / draws on",
+  "note": "≠ Draws on = greift auf vorhandene Motive oder Konventionen zurück.",
+  "ex": "Shakespeare employs dramatic irony.",
+  "id": "v2-analy-uses-employs-draws-on",
+  "prio": 1,
+  "gap": "Shakespeare _____ dramatic irony."
+ },
+ {
+  "cat": "Analyseverben",
+  "basic": "creates",
+  "en": "establishes / evokes",
+  "note": "≠ Establishes = baut auf; evokes = ruft Stimmung/Gefühl hervor.",
+  "ex": "The setting evokes unease.",
+  "id": "v2-analy-creates-establishes-evokes",
+  "prio": 1,
+  "gap": "The setting _____ unease."
+ },
+ {
+  "cat": "Analyseverben",
+  "basic": "makes stronger",
+  "en": "reinforces / intensifies",
+  "note": "≠ Reinforces = bekräftigt; intensifies = verstärkt die Intensität.",
+  "ex": "Repetition reinforces the central message.",
+  "id": "v2-analy-makes-stronger-reinforces-intensifie",
+  "prio": 1,
+  "gap": "Repetition _____ the central message."
+ },
+ {
+  "cat": "Analyseverben",
+  "basic": "is connected to",
+  "en": "is linked to / is intertwined with",
+  "note": "≠ Intertwined = eng und wechselseitig verflochten.",
+  "ex": "Ambition is intertwined with guilt.",
+  "id": "v2-analy-is-connected-to-is-linked-to-is-inte",
+  "prio": 1,
+  "gap": "Ambition _____ guilt."
+ },
+ {
+  "cat": "Analyseverben",
+  "basic": "contrasts",
+  "en": "juxtaposes",
+  "note": "≠ Juxtaposes = stellt Elemente bewusst nebeneinander.",
+  "ex": "The playwright juxtaposes loyalty and betrayal.",
+  "id": "v2-analy-contrasts-juxtaposes",
+  "prio": 1,
+  "gap": "The playwright _____ loyalty and betrayal."
+ },
+ {
+  "cat": "Analyseverben",
+  "basic": "criticises",
+  "en": "challenges / calls into question",
+  "note": "≠ Challenges stellt Konventionen infrage, muss sie nicht ausdrücklich verurteilen.",
+  "ex": "The text challenges gender stereotypes.",
+  "id": "v2-analy-criticises-challenges-calls-into-que",
+  "prio": 1,
+  "gap": "The text _____ gender stereotypes."
+ },
+ {
+  "cat": "Wirkung & Bedeutung",
+  "basic": "important",
+  "en": "significant / crucial",
+  "note": "≠ Crucial = entscheidend; significant = bedeutsam.",
+  "ex": "The decision is crucial to the plot.",
+  "id": "v2-wirku-important-significant-crucial",
+  "prio": 1,
+  "gap": "The decision is _____ to the plot."
+ },
+ {
+  "cat": "Wirkung & Bedeutung",
+  "basic": "very important",
+  "en": "pivotal / of central importance",
+  "note": "≠ Pivotal = Wendepunkt oder Schlüsselrolle.",
+  "ex": "This is a pivotal moment in the tragedy.",
+  "id": "v2-wirku-very-important-pivotal-of-central-im",
+  "prio": 1,
+  "gap": "This is a _____ moment in the tragedy."
+ },
+ {
+  "cat": "Wirkung & Bedeutung",
+  "basic": "meaning",
+  "en": "significance / implication",
+  "note": "≠ Significance = Bedeutung; implication = Folgerung / mögliche Auswirkung.",
+  "ex": "The implication is unsettling.",
+  "id": "v2-wirku-meaning-significance-implication",
+  "prio": 1,
+  "gap": "The _____ is unsettling."
+ },
+ {
+  "cat": "Wirkung & Bedeutung",
+  "basic": "effect",
+  "en": "impact / influence",
+  "note": "≠ Impact = starke Wirkung; influence = beeinflussender Faktor.",
+  "ex": "The speech has a lasting impact.",
+  "id": "v2-wirku-effect-impact-influence",
+  "prio": 1,
+  "gap": "The speech has a lasting _____."
+ },
+ {
+  "cat": "Wirkung & Bedeutung",
+  "basic": "strong",
+  "en": "compelling / forceful",
+  "note": "≠ Compelling = überzeugend/fesselnd; forceful = energisch.",
+  "ex": "She delivers a compelling argument.",
+  "id": "v2-wirku-strong-compelling-forceful",
+  "prio": 1,
+  "gap": "She delivers a _____ argument."
+ },
+ {
+  "cat": "Wirkung & Bedeutung",
+  "basic": "clear",
+  "en": "evident / apparent",
+  "note": "≠ Evident = durch Belege erkennbar; apparent = anscheinend, möglicherweise nur äußerlich.",
+  "ex": "His fear becomes evident.",
+  "id": "v2-wirku-clear-evident-apparent",
+  "prio": 1,
+  "gap": "His fear becomes _____."
+ },
+ {
+  "cat": "Wirkung & Bedeutung",
+  "basic": "main",
+  "en": "central / underlying",
+  "note": "≠ Underlying = tieferliegend, nicht einfach Haupt-.",
+  "ex": "The underlying conflict concerns identity.",
+  "id": "v2-wirku-main-central-underlying",
+  "prio": 1,
+  "gap": "The _____ conflict concerns identity."
+ },
+ {
+  "cat": "Wirkung & Bedeutung",
+  "basic": "big change",
+  "en": "fundamental shift / profound transformation",
+  "note": "≠ Bezeichnet tiefgreifenden statt beliebigen Wandel.",
+  "ex": "The final scene marks a profound transformation.",
+  "id": "v2-wirku-big-change-fundamental-shift-profoun",
+  "prio": 1,
+  "gap": "The final scene marks a _____."
+ },
+ {
+  "cat": "Wirkung & Bedeutung",
+  "basic": "difference",
+  "en": "distinction / disparity",
+  "note": "≠ Distinction = begrifflicher Unterschied; disparity = Ungleichheit.",
+  "ex": "The disparity in power is striking.",
+  "id": "v2-wirku-difference-distinction-disparity",
+  "prio": 1,
+  "gap": "The _____ in power is striking."
+ },
+ {
+  "cat": "Wirkung & Bedeutung",
+  "basic": "similarity",
+  "en": "parallel / correspondence",
+  "note": "≠ Parallel = vergleichbare Entwicklung; correspondence = Übereinstimmung.",
+  "ex": "A parallel emerges between both characters.",
+  "id": "v2-wirku-similarity-parallel-correspondence",
+  "prio": 1,
+  "gap": "A _____ emerges between both characters."
+ },
+ {
+  "cat": "Wirkung & Bedeutung",
+  "basic": "problem",
+  "en": "difficulty / obstacle / dilemma",
+  "note": "≠ Difficulty = Schwierigkeit; obstacle = Hindernis; dilemma = konflikthafte Entscheidung.",
+  "ex": "His loyalty becomes an obstacle.",
+  "id": "v2-wirku-problem-difficulty-obstacle-dilemma",
+  "prio": 1,
+  "gap": "His loyalty becomes an _____."
+ },
+ {
+  "cat": "Wirkung & Bedeutung",
+  "basic": "bad result",
+  "en": "consequence / repercussion",
+  "note": "≠ Repercussion = oft negative Folge.",
+  "ex": "His actions have severe repercussions.",
+  "id": "v2-wirku-bad-result-consequence-repercussion",
+  "prio": 1,
+  "gap": "His actions have severe _____."
+ },
+ {
+  "cat": "Figuren & Konflikte",
+  "basic": "wants",
+  "en": "desires / aspires to",
+  "note": "≠ Aspires to = strebt langfristig an.",
+  "ex": "He aspires to greater authority.",
+  "id": "v2-figur-wants-desires-aspires-to",
+  "prio": 0,
+  "gap": "He _____ greater authority."
+ },
+ {
+  "cat": "Figuren & Konflikte",
+  "basic": "tries to",
+  "en": "attempts to / seeks to",
+  "note": "≈ Seeks to hebt Zielrichtung hervor.",
+  "ex": "She seeks to control the situation.",
+  "id": "v2-figur-tries-to-attempts-to-seeks-to",
+  "prio": 0,
+  "gap": "She _____ control the situation."
+ },
+ {
+  "cat": "Figuren & Konflikte",
+  "basic": "makes someone do",
+  "en": "pressures / coerces",
+  "note": "≠ Coerces bedeutet Zwang; nicht jede Beeinflussung ist coercion.",
+  "ex": "She pressures him to act.",
+  "id": "v2-figur-makes-someone-do-pressures-coerces",
+  "prio": 0,
+  "gap": "She _____ him to act."
+ },
+ {
+  "cat": "Figuren & Konflikte",
+  "basic": "controls",
+  "en": "dominates / exerts control over",
+  "note": "≠ Dominates = beherrscht stark.",
+  "ex": "He attempts to exert control over others.",
+  "id": "v2-figur-controls-dominates-exerts-control-ov",
+  "prio": 0,
+  "gap": "He attempts to _____ others."
+ },
+ {
+  "cat": "Figuren & Konflikte",
+  "basic": "is afraid",
+  "en": "fears / is apprehensive about",
+  "note": "≠ Apprehensive = besorgt wegen Erwartetem.",
+  "ex": "He is apprehensive about the consequences.",
+  "id": "v2-figur-is-afraid-fears-is-apprehensive-abou",
+  "prio": 0,
+  "gap": "He _____ the consequences."
+ },
+ {
+  "cat": "Figuren & Konflikte",
+  "basic": "is unsure",
+  "en": "hesitates / is torn between",
+  "note": "≠ Torn between benennt zwei widerstreitende Optionen.",
+  "ex": "He is torn between duty and ambition.",
+  "id": "v2-figur-is-unsure-hesitates-is-torn-between",
+  "prio": 0,
+  "gap": "He _____ duty and ambition."
+ },
+ {
+  "cat": "Figuren & Konflikte",
+  "basic": "is angry",
+  "en": "is resentful / feels outraged",
+  "note": "≠ Resentful = nachtragend/verbittert; outraged = empört.",
+  "ex": "Omz grows resentful.",
+  "id": "v2-figur-is-angry-is-resentful-feels-outraged",
+  "prio": 0,
+  "gap": "Omz grows _____."
+ },
+ {
+  "cat": "Figuren & Konflikte",
+  "basic": "is sad",
+  "en": "is distressed / is grief-stricken",
+  "note": "≠ Grief-stricken = von Trauer überwältigt, meist nach Verlust.",
+  "ex": "He appears deeply distressed.",
+  "id": "v2-figur-is-sad-is-distressed-is-grief-strick",
+  "prio": 0,
+  "gap": "He appears deeply _____."
+ },
+ {
+  "cat": "Figuren & Konflikte",
+  "basic": "gets worse",
+  "en": "deteriorates / escalates",
+  "note": "≠ Deteriorates = Zustand verschlechtert sich; escalates = Konflikt spitzt sich zu.",
+  "ex": "Their dispute escalates.",
+  "id": "v2-figur-gets-worse-deteriorates-escalates",
+  "prio": 0,
+  "gap": "Their dispute _____."
+ },
+ {
+  "cat": "Figuren & Konflikte",
+  "basic": "changes his mind",
+  "en": "reconsiders / reverses his decision",
+  "note": "≠ Reconsiders = überdenkt; reverses = Entscheidung wird umgekehrt.",
+  "ex": "Macbeth reconsiders his plan.",
+  "id": "v2-figur-changes-his-mind-reconsiders-reverse",
+  "prio": 0,
+  "gap": "Macbeth _____ his plan."
+ },
+ {
+  "cat": "Figuren & Konflikte",
+  "basic": "feels guilty",
+  "en": "is burdened by guilt / is remorseful",
+  "note": "≠ Remorseful = reumütig; guilt muss nicht zu Reue führen.",
+  "ex": "He is burdened by guilt.",
+  "id": "v2-figur-feels-guilty-is-burdened-by-guilt-is",
+  "prio": 0,
+  "gap": "He _____."
+ },
+ {
+  "cat": "Figuren & Konflikte",
+  "basic": "hides his feelings",
+  "en": "conceals / suppresses his feelings",
+  "note": "≠ Suppresses = unterdrückt; conceals = verbirgt vor anderen.",
+  "ex": "She conceals her fears.",
+  "id": "v2-figur-hides-his-feelings-conceals-suppress",
+  "prio": 0,
+  "gap": "She _____ her fears."
+ },
+ {
+  "cat": "Gesellschaft & Argumentation",
+  "basic": "rules",
+  "en": "norms / conventions",
+  "note": "≠ Norms = soziale Erwartungen; conventions = etablierte Gepflogenheiten.",
+  "ex": "She defies social conventions.",
+  "id": "v2-gesel-rules-norms-conventions",
+  "prio": 0,
+  "gap": "She defies social _____."
+ },
+ {
+  "cat": "Gesellschaft & Argumentation",
+  "basic": "unfair",
+  "en": "inequitable / discriminatory",
+  "note": "≠ Discriminatory = benachteiligt wegen bestimmter Merkmale.",
+  "ex": "The system perpetuates inequitable conditions.",
+  "id": "v2-gesel-unfair-inequitable-discriminatory",
+  "prio": 0,
+  "gap": "The system perpetuates _____ conditions."
+ },
+ {
+  "cat": "Gesellschaft & Argumentation",
+  "basic": "freedom",
+  "en": "autonomy / self-determination",
+  "note": "≠ Autonomy = Selbstständigkeit; self-determination = Recht, selbst zu bestimmen.",
+  "ex": "She demands autonomy.",
+  "id": "v2-gesel-freedom-autonomy-self-determination",
+  "prio": 0,
+  "gap": "She demands _____."
+ },
+ {
+  "cat": "Gesellschaft & Argumentation",
+  "basic": "pressure",
+  "en": "social pressure / coercion",
+  "note": "≠ Coercion = Zwang, stärker als pressure.",
+  "ex": "Social pressure constrains her choices.",
+  "id": "v2-gesel-pressure-social-pressure-coercion",
+  "prio": 0,
+  "gap": "_____ constrains her choices."
+ },
+ {
+  "cat": "Gesellschaft & Argumentation",
+  "basic": "power",
+  "en": "authority / influence / agency",
+  "note": "≠ Authority = legitime/formelle Macht; agency = eigene Handlungsmacht.",
+  "ex": "She gradually gains agency.",
+  "id": "v2-gesel-power-authority-influence-agency",
+  "prio": 0,
+  "gap": "She gradually gains _____."
+ },
+ {
+  "cat": "Gesellschaft & Argumentation",
+  "basic": "does not allow",
+  "en": "restricts / constrains",
+  "note": "≈ Constrains betont enge Spielräume.",
+  "ex": "Gender expectations constrain her ambitions.",
+  "id": "v2-gesel-does-not-allow-restricts-constrains",
+  "prio": 0,
+  "gap": "Gender expectations _____ her ambitions."
+ },
+ {
+  "cat": "Gesellschaft & Argumentation",
+  "basic": "keeps going",
+  "en": "persists / endures",
+  "note": "≠ Persists = dauert an; endures = hält etwas Belastendes aus.",
+  "ex": "Inequality persists.",
+  "id": "v2-gesel-keeps-going-persists-endures",
+  "prio": 0,
+  "gap": "Inequality _____."
+ },
+ {
+  "cat": "Gesellschaft & Argumentation",
+  "basic": "causes",
+  "en": "contributes to / gives rise to",
+  "note": "≠ Contributes to = ein Faktor von mehreren; gives rise to = bringt hervor.",
+  "ex": "Isolation contributes to distress.",
+  "id": "v2-gesel-causes-contributes-to-gives-rise-to",
+  "prio": 0,
+  "gap": "Isolation _____ distress."
+ },
+ {
+  "cat": "Gesellschaft & Argumentation",
+  "basic": "leads to",
+  "en": "results in / culminates in",
+  "note": "≠ Culminates in = Höhepunkt einer Entwicklung.",
+  "ex": "The tension culminates in violence.",
+  "id": "v2-gesel-leads-to-results-in-culminates-in",
+  "prio": 0,
+  "gap": "The tension _____ violence."
+ },
+ {
+  "cat": "Gesellschaft & Argumentation",
+  "basic": "criticises society",
+  "en": "exposes structural inequality",
+  "note": "≠ Nicht allgemein synonym: nur verwenden, wenn der Text strukturelle Ungleichheit zeigt.",
+  "ex": "",
+  "id": "v2-gesel-criticises-society-exposes-structura",
+  "prio": 0
+ },
+ {
+  "cat": "Linking Words",
+  "de": "Addition",
+  "en": "furthermore / moreover / in addition",
+  "ex": "Moreover, the scene reveals a power imbalance.",
+  "id": "v2-linki-furthermore-moreover-in-addition",
+  "prio": 1,
+  "gap": "_____, the scene reveals a power imbalance."
+ },
+ {
+  "cat": "Linking Words",
+  "de": "Ähnlichkeit",
+  "en": "likewise / similarly / by the same token",
+  "ex": "Similarly, both protagonists face social pressure.",
+  "id": "v2-linki-likewise-similarly-by-the-same-token",
+  "prio": 1,
+  "gap": "_____, both protagonists face social pressure."
+ },
+ {
+  "cat": "Linking Words",
+  "de": "Gegensatz",
+  "en": "however / nevertheless / by contrast",
+  "ex": "By contrast, Banquo questions the prophecy.",
+  "id": "v2-linki-however-nevertheless-by-contrast",
+  "prio": 1,
+  "gap": "_____, Banquo questions the prophecy."
+ },
+ {
+  "cat": "Linking Words",
+  "de": "Einräumung",
+  "en": "although / even though / notwithstanding",
+  "ex": "Although he hesitates, he eventually acts.",
+  "id": "v2-linki-although-even-though-notwithstanding",
+  "prio": 1,
+  "gap": "_____ he hesitates, he eventually acts."
+ },
+ {
+  "cat": "Linking Words",
+  "de": "Ursache",
+  "en": "because / since / owing to",
+  "ex": "His fear intensifies owing to his insecurity.",
+  "id": "v2-linki-because-since-owing-to",
+  "prio": 1,
+  "gap": "His fear intensifies _____ his insecurity."
+ },
+ {
+  "cat": "Linking Words",
+  "de": "Folge",
+  "en": "therefore / consequently / as a result",
+  "ex": "Consequently, their relationship deteriorates.",
+  "id": "v2-linki-therefore-consequently-as-a-result",
+  "prio": 1,
+  "gap": "_____, their relationship deteriorates."
+ },
+ {
+  "cat": "Linking Words",
+  "de": "Beleg",
+  "en": "for instance / as illustrated by / as evidenced by",
+  "ex": "This is evidenced by his repeated questions.",
+  "id": "v2-linki-for-instance-as-illustrated-by-as-ev",
+  "prio": 1,
+  "gap": "This is _____ his repeated questions."
+ },
+ {
+  "cat": "Linking Words",
+  "de": "Präzisierung",
+  "en": "more precisely / in other words / namely",
+  "ex": "More precisely, she questions his masculinity.",
+  "id": "v2-linki-more-precisely-in-other-words-namely",
+  "prio": 1,
+  "gap": "_____, she questions his masculinity."
+ },
+ {
+  "cat": "Linking Words",
+  "de": "Schwerpunkt",
+  "en": "above all / notably / particularly",
+  "ex": "Notably, the scene ends in silence.",
+  "id": "v2-linki-above-all-notably-particularly",
+  "prio": 1,
+  "gap": "_____, the scene ends in silence."
+ },
+ {
+  "cat": "Linking Words",
+  "de": "Einschränkung",
+  "en": "to some extent / arguably / within limits",
+  "ex": "Arguably, his ambition outweighs his loyalty.",
+  "id": "v2-linki-to-some-extent-arguably-within-limit",
+  "prio": 1,
+  "gap": "_____, his ambition outweighs his loyalty."
+ },
+ {
+  "cat": "Linking Words",
+  "de": "Schlussfolgerung",
+  "en": "thus / taken together / ultimately",
+  "ex": "Taken together, these details suggest alienation.",
+  "id": "v2-linki-thus-taken-together-ultimately",
+  "prio": 1,
+  "gap": "_____, these details suggest alienation."
+ },
+ {
+  "cat": "Konstruktionen",
+  "basic": "The author shows that …",
+  "en": "The passage suggests that …",
+  "note": "Vorsichtiger, wenn es sich um Interpretation handelt.",
+  "id": "v2-konst-the-author-shows-that-the-passage-su",
+  "prio": 2
+ },
+ {
+  "cat": "Konstruktionen",
+  "basic": "This shows …",
+  "en": "This is particularly evident in …",
+  "note": "Verknüpft These mit einem konkreten Beleg.",
+  "id": "v2-konst-this-shows-this-is-particularly-evid",
+  "prio": 2
+ },
+ {
+  "cat": "Konstruktionen",
+  "basic": "The reader feels …",
+  "en": "The passage may evoke a sense of …",
+  "note": "Wirkung nie als sichere Reaktion aller Leser behaupten.",
+  "id": "v2-konst-the-reader-feels-the-passage-may-evo",
+  "prio": 2
+ },
+ {
+  "cat": "Konstruktionen",
+  "basic": "The writer wants to …",
+  "en": "The device appears intended to …",
+  "note": "Intention nicht ohne Beleg als Fakt behaupten.",
+  "id": "v2-konst-the-writer-wants-to-the-device-appea",
+  "prio": 2
+ },
+ {
+  "cat": "Konstruktionen",
+  "basic": "This is because …",
+  "en": "This can be attributed to …",
+  "note": "Nur bei nachvollziehbarer Ursache.",
+  "id": "v2-konst-this-is-because-this-can-be-attribut",
+  "prio": 2
+ },
+ {
+  "cat": "Konstruktionen",
+  "basic": "There is a difference …",
+  "en": "A key distinction lies in …",
+  "note": "Anschließenden Unterschied exakt benennen.",
+  "id": "v2-konst-there-is-a-difference-a-key-distinct",
+  "prio": 2
+ },
+ {
+  "cat": "Konstruktionen",
+  "basic": "It is about …",
+  "en": "At its core, the passage explores …",
+  "note": "Gut für Deutungsthese, nicht für Inhaltsangabe.",
+  "id": "v2-konst-it-is-about-at-its-core-the-passage-",
+  "prio": 2
+ },
+ {
+  "cat": "Konstruktionen",
+  "basic": "The character changes …",
+  "en": "The character undergoes a gradual shift …",
+  "note": "Nur, wenn die Veränderung wirklich schrittweise ist.",
+  "id": "v2-konst-the-character-changes-the-character-",
+  "prio": 2
+ },
+ {
+  "cat": "Konstruktionen",
+  "basic": "It is important to mention …",
+  "en": "It is worth noting that …",
+  "note": "Zur gezielten Hervorhebung; sparsam verwenden.",
+  "id": "v2-konst-it-is-important-to-mention-it-is-wor",
+  "prio": 2
+ },
+ {
+  "cat": "Konstruktionen",
+  "basic": "All in all …",
+  "en": "Ultimately, the analysis indicates that …",
+  "note": "Fazit einer Analyse, ohne neuen Gedanken.",
+  "id": "v2-konst-all-in-all-ultimately-the-analysis-i",
+  "prio": 2
+ },
+ {
+  "cat": "Macbeth",
+  "basic": "ambition",
+  "en": "unchecked ambition / lust for power",
+  "de": "maßloser Ehrgeiz / Machtgier",
+  "id": "v2-macbe-ambition-unchecked-ambition-lust-for",
+  "prio": 0
+ },
+ {
+  "cat": "Macbeth",
+  "basic": "guilt",
+  "en": "overwhelming guilt / guilty conscience",
+  "de": "überwältigende Schuld / schlechtes Gewissen",
+  "id": "v2-macbe-guilt-overwhelming-guilt-guilty-cons",
+  "prio": 0
+ },
+ {
+  "cat": "Macbeth",
+  "basic": "fear",
+  "en": "paranoia / mounting anxiety",
+  "de": "Paranoia / zunehmende Angst – nicht gleichsetzen",
+  "id": "v2-macbe-fear-paranoia-mounting-anxiety",
+  "prio": 0
+ },
+ {
+  "cat": "Macbeth",
+  "basic": "violence",
+  "en": "bloodshed / ruthless brutality",
+  "de": "Blutvergießen / rücksichtslose Brutalität",
+  "id": "v2-macbe-violence-bloodshed-ruthless-brutalit",
+  "prio": 0
+ },
+ {
+  "cat": "Macbeth",
+  "basic": "change",
+  "en": "moral deterioration / descent into tyranny",
+  "de": "moralischer Verfall / Entwicklung zur Tyrannei",
+  "id": "v2-macbe-change-moral-deterioration-descent-i",
+  "prio": 0
+ },
+ {
+  "cat": "Macbeth",
+  "basic": "appearance",
+  "en": "deceptive appearances / moral ambiguity",
+  "de": "trügerischer Schein / moralische Mehrdeutigkeit",
+  "id": "v2-macbe-appearance-deceptive-appearances-mor",
+  "prio": 0
+ },
+ {
+  "cat": "Macbeth",
+  "basic": "power",
+  "en": "legitimate kingship / usurpation",
+  "de": "legitime Königsherrschaft / widerrechtliche Machtergreifung",
+  "id": "v2-macbe-power-legitimate-kingship-usurpation",
+  "prio": 0
+ },
+ {
+  "cat": "Macbeth",
+  "basic": "gender roles",
+  "en": "gender inversion / notions of masculinity",
+  "de": "Umkehr von Geschlechterzuschreibungen / Männlichkeitsbilder",
+  "id": "v2-macbe-gender-roles-gender-inversion-notion",
+  "prio": 0
+ },
+ {
+  "cat": "Macbeth",
+  "basic": "fate",
+  "en": "prophecy / free will / fatalism",
+  "de": "Prophezeiung / Willensfreiheit / Schicksalsglaube",
+  "id": "v2-macbe-fate-prophecy-free-will-fatalism",
+  "prio": 0
+ },
+ {
+  "cat": "Red Pitch",
+  "basic": "friends",
+  "en": "friendship / solidarity / fractured trust",
+  "de": "Freundschaft / Zusammenhalt / beschädigtes Vertrauen",
+  "id": "v2-red-p-friends-friendship-solidarity-fractu",
+  "prio": 0
+ },
+ {
+  "cat": "Red Pitch",
+  "basic": "change in area",
+  "en": "urban redevelopment / displacement",
+  "de": "Stadtumbau / Verdrängung (nicht dasselbe)",
+  "id": "v2-red-p-change-in-area-urban-redevelopment-d",
+  "prio": 0
+ },
+ {
+  "cat": "Red Pitch",
+  "basic": "home",
+  "en": "sense of belonging / attachment to place",
+  "de": "Zugehörigkeitsgefühl / Ortsbindung",
+  "id": "v2-red-p-home-sense-of-belonging-attachment-t",
+  "prio": 0
+ },
+ {
+  "cat": "Red Pitch",
+  "basic": "dream",
+  "en": "aspiration / professional ambition",
+  "de": "Bestrebung / beruflicher Ehrgeiz",
+  "id": "v2-red-p-dream-aspiration-professional-ambiti",
+  "prio": 0
+ },
+ {
+  "cat": "Red Pitch",
+  "basic": "argue",
+  "en": "rivalry / confrontation / escalation",
+  "de": "Rivalität / Konfrontation / Zuspitzung",
+  "id": "v2-red-p-argue-rivalry-confrontation-escalati",
+  "prio": 0
+ },
+ {
+  "cat": "Red Pitch",
+  "basic": "family",
+  "en": "intergenerational ties / caregiving",
+  "de": "Beziehungen zwischen Generationen / Fürsorge",
+  "id": "v2-red-p-family-intergenerational-ties-caregi",
+  "prio": 0
+ },
+ {
+  "cat": "Red Pitch",
+  "basic": "football ground",
+  "en": "community space / shared identity",
+  "de": "Gemeinschaftsort / gemeinsame Identität",
+  "id": "v2-red-p-football-ground-community-space-shar",
+  "prio": 0
+ },
+ {
+  "cat": "Red Pitch",
+  "basic": "sound",
+  "en": "recurring sound motif / sonic intrusion",
+  "de": "wiederkehrendes Klangmotiv / störendes Eindringen von Geräuschen",
+  "id": "v2-red-p-sound-recurring-sound-motif-sonic-in",
+  "prio": 0
+ },
+ {
+  "cat": "Feministische Kurzgeschichten",
+  "basic": "gender roles",
+  "en": "prescribed gender roles / domestic expectations",
+  "de": "vorgeschriebene Geschlechterrollen / Erwartungen an Haushaltspflichten",
+  "id": "v2-femin-gender-roles-prescribed-gender-roles",
+  "prio": 0
+ },
+ {
+  "cat": "Feministische Kurzgeschichten",
+  "basic": "freedom",
+  "en": "female autonomy / emancipation",
+  "de": "weibliche Selbstbestimmung / Emanzipation",
+  "id": "v2-femin-freedom-female-autonomy-emancipation",
+  "prio": 0
+ },
+ {
+  "cat": "Feministische Kurzgeschichten",
+  "basic": "power",
+  "en": "patriarchal authority / power imbalance",
+  "de": "patriarchale Autorität / Machtungleichgewicht",
+  "id": "v2-femin-power-patriarchal-authority-power-im",
+  "prio": 0
+ },
+ {
+  "cat": "Feministische Kurzgeschichten",
+  "basic": "trapped",
+  "en": "confinement / social constraints",
+  "de": "Eingeschlossensein / soziale Einschränkungen",
+  "id": "v2-femin-trapped-confinement-social-constrain",
+  "prio": 0
+ },
+ {
+  "cat": "Feministische Kurzgeschichten",
+  "basic": "voice",
+  "en": "silencing / self-expression",
+  "de": "Zum-Schweigen-Bringen / Selbstausdruck",
+  "id": "v2-femin-voice-silencing-self-expression",
+  "prio": 0
+ },
+ {
+  "cat": "Feministische Kurzgeschichten",
+  "basic": "work",
+  "en": "unpaid domestic labour / division of labour",
+  "de": "unbezahlte Hausarbeit / Arbeitsteilung",
+  "id": "v2-femin-work-unpaid-domestic-labour-division",
+  "prio": 0
+ },
+ {
+  "cat": "Feministische Kurzgeschichten",
+  "basic": "control",
+  "en": "paternalism / coercive control",
+  "de": "Bevormundung / zwanghafte Kontrolle (starke Aussage)",
+  "id": "v2-femin-control-paternalism-coercive-control",
+  "prio": 0
+ },
+ {
+  "cat": "Feministische Kurzgeschichten",
+  "basic": "identity",
+  "en": "selfhood / individual agency",
+  "de": "eigenständige Identität / Handlungsmacht",
+  "id": "v2-femin-identity-selfhood-individual-agency",
+  "prio": 0
+ },
+ {
+  "cat": "Stolperfallen",
+  "en": "proves",
+  "de": "proves = beweist; suggests = legt nahe. Literarische Deutung selten als Beweis ausgeben.",
+  "id": "v2-stolp-proves",
+  "prio": 0
+ },
+ {
+  "cat": "Stolperfallen",
+  "en": "obviously / clearly",
+  "de": "Nur nutzen, wenn wirklich unstrittig; otherwise: arguably / seemingly / may.",
+  "id": "v2-stolp-obviously-clearly",
+  "prio": 0
+ },
+ {
+  "cat": "Stolperfallen",
+  "en": "dramatically",
+  "de": "Bedeutet je nach Kontext „dramatisch/stark“; nicht automatisch „dramaturgisch“.",
+  "id": "v2-stolp-dramatically",
+  "prio": 0
+ },
+ {
+  "cat": "Stolperfallen",
+  "en": "sympathises / empathises",
+  "de": "Sympathise = Mitgefühl haben/übereinstimmen; empathise = sich einfühlen.",
+  "id": "v2-stolp-sympathises-empathises",
+  "prio": 0
+ },
+ {
+  "cat": "Stolperfallen",
+  "en": "economic / economical",
+  "de": "Economic = wirtschaftlich; economical = sparsam.",
+  "id": "v2-stolp-economic-economical",
+  "prio": 0
+ },
+ {
+  "cat": "Stolperfallen",
+  "en": "eventually / possibly",
+  "de": "Eventually = schließlich, nicht eventuell. Possibly = möglicherweise.",
+  "id": "v2-stolp-eventually-possibly",
+  "prio": 0
+ },
+ {
+  "cat": "Stolperfallen",
+  "en": "actual / current",
+  "de": "Actual = tatsächlich; current = gegenwärtig.",
+  "id": "v2-stolp-actual-current",
+  "prio": 0
+ },
+ {
+  "cat": "Stolperfallen",
+  "en": "character / protagonist",
+  "de": "Character = Figur; protagonist = zentrale Hauptfigur.",
+  "id": "v2-stolp-character-protagonist",
+  "prio": 0
+ },
+ {
+  "cat": "Stolperfallen",
+  "en": "narrator / playwright",
+  "de": "Bei Macbeth und Red Pitch: playwright / dramatic voice; bei Erzählprosa: narrator.",
+  "id": "v2-stolp-narrator-playwright",
+  "prio": 0
+ },
+ {
+  "cat": "Stolperfallen",
+  "en": "quote / paraphrase",
+  "de": "Direkte Textbelege nur als korrektes Zitat; sonst paraphrasieren und Fundstelle angeben.",
+  "id": "v2-stolp-quote-paraphrase",
+  "prio": 0
+ }
+]
